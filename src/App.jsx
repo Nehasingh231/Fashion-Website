@@ -59,43 +59,42 @@ function App() {
   return (
     <div className="min-h-screen bg-gray-100">
       {/* Header with dark green background */}
-      <header className="bg-[#0a4d2e] text-white p-5">
+      <header className="bg-[#0a4d2e] text-white p-3">
         <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
           {/* Logo and Hamburger Menu */}
-          <div className="flex justify-between w-full md:w-auto items-center">
-            <div className="logo-container">
+          <div className="flex gap-2 justify-between w-full items-center">
+            <div className="logo-container "> 
               <img src="/assests/logo-image.jpg" alt="Style Logo" className="logo-image w-16 h-16" />
+            </div>
+            {/* Search Bar - Centered */}
+            <div className="flex-grow mx-0 md:mx-15 my-4 md:my-0 w-auto search-input">
+              <input
+                type="text"
+                placeholder="Search for products..."
+                className="w-full p-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-green-500"
+              />
             </div>
             <button onClick={toggleMenu} className="md:hidden cursor-pointer">
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
 
-          {/* Search Bar - Centered */}
-          <div className="flex-grow mx-0 md:mx-8 my-4 md:my-0 w-full md:w-auto  search-input">
-            <input
-              type="text"
-              placeholder="Search for products..."
-              className="w-full p-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-green-500"
-            />
-          </div>
-
           {/* Navigation */}
-          <nav className={`${isOpen ? 'block' : 'hidden'} md:flex md:items-center md:space-x-8 space-y-4 md:space-y-0 mt-4 md:mt-0 nav-style `}>
-            <a href="#" className="block transition-transform duration-300 hover:scale-110">Shop</a>
-            <a href="#" className="block transition-transform duration-300 hover:scale-110">Trending</a>
-            <a href="#" className="block transition-transform duration-300 hover:scale-110">Categories</a>
-            <a href="#" className="block transition-transform duration-300 hover:scale-110">About Us</a>
-            <button className="bg-white rounded-full cursor-pointer p-2">
-              <ShoppingBag className="h-5 w-5 text-[#0a4d2e]" />
+          <nav className={`${isOpen ? 'block bg-white text-green-700' : 'hidden'} nav-style px-5 md:flex md:items-center md:space-x-10 space-y-4 md:space-y-0 mt-4 md:mt-0 w-6/7 md:w-3/6 bg-[rgb(10,77,46)] p-4 md:p-0 rounded-lg`}>
+            <a href="#" className={`block ${isOpen ? "border-b border-green-700":""} py-1 transition-transform duration-300 hover:scale-105 `}>Shop</a>
+            <a href="#" className={`block  ${isOpen ? "border-b border-green-700":""} py-1 transition-transform duration-300 hover:scale-105`} >Trending</a>
+            <a href="#" className={`block  ${isOpen ? "border-b border-green-700":""} py-1 transition-transform duration-300 hover:scale-105`}>Categories</a>
+            <a href="#" className={`block  ${isOpen ? "border-b border-green-700":""} py-1 transition-transform duration-300 hover:scale-105`}>About Us</a>
+            <button className=" cursor-pointer p-2 transition-transform duration-300 hover:scale-105">
+              <ShoppingBag className={` w-6 h-6 ${isOpen ? "h-8 w-8  text-green-700":""}text-white  md:flex`}  /> 
             </button>
           </nav>
-        </div>
-      </header>
+        </div>        
+      </header>   
 
       {/* Hero Section */}
-      <section className="bg-[#0a4d2e] text-white">
-        <div className="container mx-auto flex flex-col md:flex-row">
+      <section className="bg-[#0a4d2e] h-screen text-white">
+        <div className="container py-8 mx-auto flex flex-col md:flex-row">
           {/* Left Carousel - Visible on larger screens */}
           <div className="hidden md:block w-full md:w-1/3 relative overflow-hidden h-screen md:h-auto">
             <div
@@ -106,7 +105,7 @@ function App() {
               <img
                 src={fashionImages[currentImageIndex % fashionImages.length]}
                 alt={`Fashion model ${currentImageIndex + 1}`}
-                className="w-full h-full object-cover rounded-lg"
+                className="w-full h-full object-cover rounded-r-lg" 
               />
             </div>
 
@@ -120,14 +119,14 @@ function App() {
           </div>
 
           {/* Middle Content */}
-          <div className="w-full md:w-1/3 flex flex-col justify-center items-center p-4 md:p-10 relative">
+          <div className="w-full md:w-1/3 flex flex-col justify-center items-center p-4 md:p-10  relative">
             <h2 className="text-7xl md:text-8xl font-serif leading-tight text-center">
               Best <span className="text-[#ff6b35]">Style</span><br />
               For <span className="text-[#ff6b35]">You</span>
             </h2>
 
             {/* Arrow */}
-            <div className="absolute bottom-32 left-32 hidden md:block">
+            <div className="absolute bottom-34 left-32 hidden md:block">
               <svg width="100" height="80" viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M1 1C20 20 60 60 99 79" stroke="white" strokeWidth="2" />
               </svg>
@@ -141,37 +140,37 @@ function App() {
             </div>
 
             {/* Reviews */}
-            <div className="absolute cursor-pointer bottom-12 left-10 flex items-center  md:flex  ">
-              <div className="flex -space-x-2">
+            <div className="absolute cursor-pointer bottom-8 left-48 flex items-center  md:flex md:flex-col  ">
+              <div className="flex -space-x-2  ">
                 <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=64&h=64&q=80" alt="Reviewer" className="w-10 h-10 rounded-full border-2 border-white object-cover" />
                 <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=64&h=64&q=80" alt="Reviewer" className="w-10 h-10 rounded-full border-2 border-white object-cover" />
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=64&h=64&q=80" alt="Reviewer" className="w-10 h-10 rounded-full border-2 sm:flex hidden  border-white object-cover" />
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=64&h=64&q=80" alt="Reviewer" className="w-10 h-10 rounded-full border-2   border-white object-cover" />
                 <div className="w-10 h-10 rounded-full bg-[#ff6b35] flex items-center justify-center text-xs font-bold border-2 border-white">4k+</div>
               </div>
-              <span className="ml-2 text-sm uppercase tracking-wider md:flex hidden">Check Reviews</span>
+              <span className="ml-3  text-sm uppercase tracking-wider md:flex hidden">Check Reviews</span>
             </div>
 
             {/* Wavy Line */}
-            <div className="absolute bottom-24 left-10 hidden md:block">
+            <div className="absolute bottom-28 left-10 hidden md:block">
               <svg width="180" height="20" viewBox="0 0 180 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0 10C30 0 60 20 90 10C120 0 150 20 180 10" stroke="white" strokeWidth="2" />
               </svg>
             </div>
 
             {/* Description Text */}
-            <p className="text-sm mt-4 md:mt-20 mb-4 md:mb-10 text-center">
+            <p className="text-sm mt-4 md:mt-6 mb-2 md:mb-10 text-center">
               It Is A Long Established Fact That A Reader Will Be Distracted By The
               Readable Content Of A Page When Looking At Its Layout. The Point Of
               Using Lorem Ipsum Is That It Has A More
             </p>
 
             {/* Shop Now Button */}
-            <button className="bg-[#ff6b35] text-white px-8 py-3 font-bold uppercase tracking-wider">
+            <button className="bg-[#ff6b35] text-white mb-8 px-8 py-3 font-bold uppercase cursor-pointer tracking-wider">
               Shop Now
             </button>
 
             {/* Image indicators */}
-            <div className="flex space-x-2 mt-4 md:mt-8">
+            <div className="relative top-10 flex space-x-2 mt-4 md:mt-8 "> 
               {mergedImages.map((_, index) => (
                 <button
                   key={index}
@@ -200,7 +199,7 @@ function App() {
               <img
                 src={fashionImages[(currentImageIndex + 4) % fashionImages.length]}
                 alt={`Fashion model ${(currentImageIndex + 4) % fashionImages.length + 1}`}
-                className="w-full h-full object-cover rounded-lg"
+                className="w-full h-full object-cover rounded-l-lg"
               />
             </div>
 
@@ -247,4 +246,4 @@ function App() {
   );
 }
 
-export default App;
+export default App;  
