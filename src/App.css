@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-image {
+  height: 55px; /* Adjust size as needed */
+  width: auto;
+  /* size: 65px; */
+  border-radius: 50%;
+}
+
+.nav-style{
+  font-family: "Philosopher", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.search-input{
+  font-family: "Philosopher", sans-serif;
+}
+
+
+
+
